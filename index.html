@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Pet Medicine Scheduler</title>
+    <style>
+      body { font-family: system-ui, Arial; padding: 20px; max-width: 900px; margin: auto }
+      form { margin-bottom: 1rem }
+      label { display:block; margin: .25rem 0 }
+      .row { display:flex; gap:.5rem }
+      .list { margin-top:1rem }
+      .card { padding:.5rem; border:1px solid #ddd; margin-bottom:.5rem }
+    </style>
+  </head>
+  <body>
+    <h1>Pet Medicine Scheduler</h1>
+
+    <section>
+      <h2>Add Pet</h2>
+      <form id="petForm">
+        <input name="name" placeholder="Pet name" required>
+        <button type="submit">Add Pet</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Add Medicine</h2>
+      <form id="medForm">
+        <input name="name" placeholder="Medicine name" required>
+        <input name="dose" placeholder="Dose (optional)">
+        <button type="submit">Add Medicine</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Schedule Dose</h2>
+      <form id="schedForm">
+        <select name="petId" id="petSelect"></select>
+        <select name="medicineId" id="medSelect"></select>
+        <input name="time" type="datetime-local" required>
+        <input name="note" placeholder="Note (optional)">
+        <button type="submit">Schedule</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Upcoming</h2>
+      <div id="lists" class="list"></div>
+    </section>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
